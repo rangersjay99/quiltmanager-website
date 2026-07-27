@@ -1,4 +1,316 @@
-      most helpful to your organization.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QuiltManager | Quilt Management Made Simpler</title>
+
+  <meta
+    name="description"
+    content="QuiltManager is a developing platform designed to help quilt guilds, charity quilt programs, and quilt organizations manage their work."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #24303a;
+      background: #f8f5f1;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6d466b, #a65f73);
+      color: white;
+      text-align: center;
+      padding: 75px 20px 85px;
+    }
+
+    .quilt-logo {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 4px;
+      transform: rotate(45deg);
+    }
+
+    .quilt-logo span {
+      border-radius: 3px;
+      background: #f2c879;
+    }
+
+    .quilt-logo span:nth-child(2),
+    .quilt-logo span:nth-child(4),
+    .quilt-logo span:nth-child(6),
+    .quilt-logo span:nth-child(8) {
+      background: #e89b8e;
+    }
+
+    .quilt-logo span:nth-child(5) {
+      background: #ffffff;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 4.6rem);
+      letter-spacing: -2px;
+    }
+
+    .tagline {
+      max-width: 720px;
+      margin: 18px auto 0;
+      font-size: 1.25rem;
+      opacity: 0.95;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 10px 22px;
+      border: 2px solid rgba(255, 255, 255, 0.75);
+      border-radius: 30px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: -35px auto 0;
+      padding: 0 20px 60px;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 18px;
+      padding: 38px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(44, 35, 48, 0.12);
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      color: #6d466b;
+      font-size: 2rem;
+    }
+
+    .intro p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 1.08rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 60px 0 28px;
+    }
+
+    .section-title h2 {
+      margin-bottom: 8px;
+      color: #473649;
+      font-size: 2rem;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: #66717a;
+    }
+
+    .solutions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      border-top: 7px solid #a65f73;
+      box-shadow: 0 7px 20px rgba(44, 35, 48, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 26px rgba(44, 35, 48, 0.13);
+    }
+
+    .card:nth-child(2) {
+      border-top-color: #d98c5f;
+    }
+
+    .card:nth-child(3) {
+      border-top-color: #62928b;
+    }
+
+    .card:nth-child(4) {
+      border-top-color: #7482b5;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: #473649;
+      font-size: 1.35rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: #5f6971;
+    }
+
+    .interest {
+      margin-top: 55px;
+      padding: 42px 25px;
+      background: #eee3ea;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .interest h2 {
+      margin: 0 0 10px;
+      color: #6d466b;
+    }
+
+    .interest p {
+      max-width: 650px;
+      margin: 0 auto 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #6d466b;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: #543452;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      background: #302735;
+      color: #eee8ef;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      opacity: 0.78;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding-top: 55px;
+      }
+
+      .solutions {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="quilt-logo" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <h1>QuiltManager</h1>
+
+    <p class="tagline">
+      Simple tools designed to help quilt guilds, charity quilt programs,
+      and quilting organizations stay organized.
+    </p>
+
+    <div class="coming-soon">Coming Soon</div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Quilt management made simpler</h2>
+
+      <p>
+        QuiltManager is being developed as a growing platform for managing
+        the projects, inventory, events, and records that keep quilting
+        organizations running. Our goal is to provide clear, practical tools
+        without making technology overwhelming.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Planned Solutions</h2>
+        <p>Individual tools that can grow with your organization.</p>
+      </div>
+
+      <div class="solutions">
+        <article class="card">
+          <h3>Charity Quilt Management</h3>
+          <p>
+            Track quilts in storage, charity needs, distributions,
+            upcoming commitments, and yearly accomplishments.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Quilt Show Management</h3>
+          <p>
+            Manage quilt entries, categories, check-in, judging,
+            ribbons, display locations, tags, and claim tickets.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Personal Quilt Collections</h3>
+          <p>
+            Preserve information about completed quilts, makers,
+            recipients, patterns, dates, photographs, and quilt history.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Fabric &amp; Supply Tracking</h3>
+          <p>
+            Organize fabric, batting, backing, thread, tools,
+            donated materials, and other quilting supplies.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="interest">
+      <h2>Interested in QuiltManager?</h2>
+
+      <p>
+        The platform is currently under development. Contact us to share
+        your ideas or let us know which quilt-management tools would be
+        most helpful to your organization.
       </p>
 
       <a
@@ -19,3 +331,7 @@
 
 </body>
 </html>
+
+Then:
+
+Click Commit changes.
